@@ -20,7 +20,14 @@ function testCard(gameList) {
   return (
     <ul>
       {gameList.map((game) => {
-        return <img src={game.background_image} width="256" height="144" />;
+        return (
+          <img
+            key={game.id}
+            src={game.background_image}
+            width="256"
+            height="144"
+          />
+        );
       })}
     </ul>
   );

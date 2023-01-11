@@ -3,4 +3,6 @@ import { render, screen } from "@testing-library/react";
 import Shop from "./Shop";
 import { testGameObject } from "../../helpers/testGame";
 
-test("renders game images to screen", () => {});
+test("renders game images to screen", () => {
+  render(<Shop gameList={[testGameObject]} />);
+});
