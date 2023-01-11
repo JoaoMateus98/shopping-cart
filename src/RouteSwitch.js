@@ -1,17 +1,19 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Nav from "./components/Nav";
 import Home from "./components/home/Home";
-import Cart from "./components/cart/Cart";
 import Shop from "./components/shop/Shop";
+import Cart from "./components/cart/Cart";
 
 const RouteSwitch = () => {
   return (
-    <BrowserRouter>
+    <Router>
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 };
 
