@@ -3,6 +3,7 @@ import Nav from "./components/Nav";
 import Home from "./components/home/Home";
 import Shop from "./components/shop/Shop";
 import Cart from "./components/cart/Cart";
+console.log(process.env.REACT_APP_MY_API);
 
 const App = () => {
   return (
