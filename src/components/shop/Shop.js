@@ -1,4 +1,6 @@
-const Shop = () => {
+const Shop = ({ gameList }) => {
+  console.log(gameList);
+
   return <div>Shop Page</div>;
 };
 
