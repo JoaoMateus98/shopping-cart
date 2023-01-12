@@ -31,20 +31,5 @@ const Shop = ({ gameList, setGames }) => {
 export default Shop;
 
 function testCard(gameList) {
-  // return <img src={firstGame.background_image} width="256" height="144" />;
-
-  return (
-    <ul>
-      {gameList.map((game) => {
-        return (
-          <img
-            key={game.id}
-            src={game.background_image}
-            width="256"
-            height="144"
-          />
-        );
-      })}
-    </ul>
-  );
+  return <ul>{gameList.map((game) => {})}</ul>;
 }

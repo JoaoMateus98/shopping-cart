@@ -2,9 +2,18 @@ const Card = ({ game }) => {
   const { name, id, image, rating, price } = createGameObject(game);
 
   return (
-    <div className="card">
+    <section data-testid={id} className="card">
+      <img
+        src={image}
+        alt={"Image of ".concat(name)}
+        width="256"
+        height="144"
+      />
       <h2>{name}</h2>
-    </div>
+      <p>{"Metacritic Score: ".concat(rating)}</p>
+      <p>{price}</p>
+      <button>Add To Cart</button> // TODO: replace with AddToCart component
+    </section>
   );
 };
 
