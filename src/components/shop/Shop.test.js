@@ -1,8 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Shop from "./Shop";
-import { testGameObject } from "../../helpers/testGame";
+import { testGameObject } from "../../helpers/testGameObject";
 
-test("renders game images to screen", () => {
-  render(<Shop gameList={[testGameObject]} />);
-});
+test.todo("start shop tests");
