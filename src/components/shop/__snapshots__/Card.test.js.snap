@@ -24,7 +24,6 @@ exports[`creates card element renders correctly 1`] = `
     <button>
       Add To Cart
     </button>
-     // TODO: replace with AddToCart component
   </section>
 </div>
 `;

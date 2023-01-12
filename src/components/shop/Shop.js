@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Card from "./Card";
 
-export async function fetchGames(numOfGames, setIsListEmpty) {
+export async function fetchGames(numOfGames) {
   console.log("fetched");
-
   try {
     const response = await fetch(
       `https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}&page_size=${numOfGames}`

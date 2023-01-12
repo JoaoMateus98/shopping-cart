@@ -12,7 +12,7 @@ const Card = ({ game }) => {
       <h2>{name}</h2>
       <p>{"Metacritic Score: ".concat(rating)}</p>
       <p>{price}</p>
-      <button>Add To Cart</button> // TODO: replace with AddToCart component
+      <button>Add To Cart</button>
     </section>
   );
 };
