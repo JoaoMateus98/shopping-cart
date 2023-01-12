@@ -2,17 +2,21 @@ const Card = ({ game }) => {
   const { name, id, image, rating, price } = createGameObject(game);
 
   return (
-    <section data-testid={id} className="card">
-      <img
-        src={image}
-        alt={"Image of ".concat(name)}
-        width="256"
-        height="144"
-      />
-      <h2>{name}</h2>
-      <p>{"Metacritic Score: ".concat(rating)}</p>
-      <p>{price}</p>
-      <button>Add To Cart</button>
+    <section data-testid={id} className="card-container">
+      <div className="card">
+        <img
+          src={image}
+          alt={"Image of ".concat(name)}
+          width="256"
+          height="144"
+        />
+        <h2>{name}</h2>
+        <p>{"Metacritic Score: ".concat(rating)}</p>
+        <div className="add-to-cart">
+          <p>${price}</p>
+          <button>Add To Cart</button>
+        </div>
+      </div>
     </section>
   );
 };
