@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
+import Card from "./Card";
 
-async function fetchGames(numOfGames) {
+export async function fetchGames(numOfGames, setIsListEmpty) {
+  console.log("fetched");
+
   try {
     const response = await fetch(
       `https://api.rawg.io/api/games?key=${process.env.REACT_APP_API_KEY}&page_size=${numOfGames}`
     );
     const responseJson = await response.json();
 
+    //list successfully filled
+    setIsListEmpty(false);
     return responseJson.results;
   } catch {
     console.log("failed to retrive games");
@@ -14,22 +19,25 @@ async function fetchGames(numOfGames) {
 }
 
 const Shop = ({ gameList, setGames }) => {
-  const [gameImage, setGameImage] = useState(null);
+  const [isListEmpty, setIsListEmpty] = useState(true);
 
   useEffect(() => {
-    if (gameList.length !== 0) {
-      setGameImage(testCard(gameList));
-    } else {
-      fetchGames(20).then((val) => setGames(gameList.concat(val)));
-      console.log("fetched");
+    if (gameList.length === 0) {
+      fetchGames(20, setIsListEmpty).then((val) =>
+        setGames(gameList.concat(val))
+      );
     }
   }, [gameList, setGames]);
 
-  return <>{gameImage === null ? <>loading...</> : <>{gameImage}</>}</>;
+  return (
+    <div className="games-container">
+      {isListEmpty ? (
+        <>Loading...</>
+      ) : (
+        gameList.map((game) => <Card key={game.id} game={game} />)
+      )}
+    </div>
+  );
 };
 
 export default Shop;
-
-function testCard(gameList) {
-  return <ul>{gameList.map((game) => {})}</ul>;
-}
