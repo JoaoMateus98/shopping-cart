@@ -23,7 +23,7 @@ const Shop = ({ gameList, setGames }) => {
       fetchGames(20).then((val) => setGames(gameList.concat(val)));
       console.log("fetched");
     }
-  }, [gameList]);
+  }, [gameList, setGames]);
 
   return <>{gameImage === null ? <>loading...</> : <>{gameImage}</>}</>;
 };
