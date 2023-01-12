@@ -14,7 +14,7 @@ test("create object with all need properties", () => {
 });
 
 describe("creates card element", () => {
-  test("renders name on h2 element", () => {
+  test("display game name", () => {
     render(<Card game={testGameObject} />);
 
     expect(
