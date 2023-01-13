@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Card from "./Card";
+import "./Shop.css";
 
 export async function fetchGames(numOfGames) {
   console.log("fetched");

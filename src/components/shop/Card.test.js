@@ -39,7 +39,9 @@ describe("creates card element", () => {
     const rating = screen.getByText(
       "Metacritic Score: ".concat(testGameObject.metacritic)
     );
-    const price = screen.getByText((testGameObject.rating * 10).toFixed(2));
+    const price = screen.getByText(
+      "$".concat((testGameObject.rating * 10).toFixed(2))
+    );
     const addToCartButton = screen.getByRole("button");
 
     expect(cardContainer).toContainElement(cardImage);

@@ -3,27 +3,36 @@
 exports[`creates card element renders correctly 1`] = `
 <div>
   <section
-    class="card"
+    class="card-container"
     data-testid="3498"
   >
-    <img
-      alt="Image of Grand Theft Auto V"
-      height="144"
-      src="https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
-      width="256"
-    />
-    <h2>
-      Grand Theft Auto V
-    </h2>
-    <p>
-      Metacritic Score: 91
-    </p>
-    <p>
-      44.70
-    </p>
-    <button>
-      Add To Cart
-    </button>
+    <div
+      class="card"
+    >
+      <img
+        alt="Image of Grand Theft Auto V"
+        height="144"
+        src="https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"
+        width="256"
+      />
+      <h2>
+        Grand Theft Auto V
+      </h2>
+      <p>
+        Metacritic Score: 91
+      </p>
+      <div
+        class="add-to-cart"
+      >
+        <p>
+          $
+          44.70
+        </p>
+        <button>
+          Add To Cart
+        </button>
+      </div>
+    </div>
   </section>
 </div>
 `;
