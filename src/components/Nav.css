@@ -36,3 +36,17 @@ a {
   list-style: none;
   font-weight: bolder;
 }
+
+@media only screen and (max-width: 460px) {
+  nav > img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  nav > ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+}
