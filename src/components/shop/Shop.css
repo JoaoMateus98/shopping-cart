@@ -43,3 +43,12 @@
   display: flex;
   gap: 16px;
 }
+
+.loading {
+  position: absolute;
+  /* center loading */
+  top: calc(50vh - (37px / 2));
+  left: calc(50vw - (151px / 2));
+  text-align: center;
+  color: var(--laurel-green);
+}

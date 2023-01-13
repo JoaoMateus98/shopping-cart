@@ -22,8 +22,14 @@
 }
 
 html,
-body {
-  min-height: 100%;
+body,
+#root {
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -37,5 +43,5 @@ body {
 }
 
 main {
-  min-height: 100%;
+  margin: auto 0;
 }
