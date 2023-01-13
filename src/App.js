@@ -4,25 +4,32 @@ import Nav from "./components/Nav";
 import Home from "./components/home/Home";
 import Shop from "./components/shop/Shop";
 import Cart from "./components/cart/Cart";
+import CartProvider from "./helpers/CartProvider";
 
 const App = () => {
   const [games, setGames] = useState([]);
 
   return (
     <Router>
-      <header>
-        <Nav />
-      </header>
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/shop"
-            element={<Shop gameList={games} setGames={setGames} />}
-          />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-      </main>
+      <CartProvider
+        children={
+          <>
+            <header>
+              <Nav />
+            </header>
+            <main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route
+                  path="/shop"
+                  element={<Shop gameList={games} setGames={setGames} />}
+                />
+                <Route path="/cart" element={<Cart />} />
+              </Routes>
+            </main>
+          </>
+        }
+      />
     </Router>
   );
 };
