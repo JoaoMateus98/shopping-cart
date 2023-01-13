@@ -10,7 +10,7 @@
   margin: 0 auto;
   width: 20rem;
   height: 26rem;
-  border: 4px outset var(--seal-brown);
+  border: 4px outset rgb(32, 32, 32);
   border-radius: 12px;
   padding: 8px;
   padding-bottom: 36px;
@@ -19,15 +19,14 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  background: rgb(71, 88, 160);
-  background-color: var(--seal-brown-dark);
+  background-color: rgb(15, 15, 15);
 }
 
 .card > img {
   width: 19rem;
   height: 12rem;
   border-radius: 12px;
-  border: 4px inset var(--seal-brown);
+  border: 4px inset rgb(32, 32, 32);
 }
 
 .card > h2 {
@@ -42,4 +41,13 @@
 .add-to-cart {
   display: flex;
   gap: 16px;
+}
+
+.loading {
+  position: absolute;
+  /* center loading */
+  top: calc(50vh - (37px / 2));
+  left: calc(50vw - (151px / 2));
+  text-align: center;
+  color: var(--laurel-green);
 }

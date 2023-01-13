@@ -25,7 +25,7 @@ const Shop = ({ gameList, setGames }) => {
   return (
     <div className="games-container">
       {gameList.length === 0 ? (
-        <>Loading...</>
+        <h1 className="loading">Loading...</h1>
       ) : (
         gameList.map((game) => <Card key={game.id} game={game} />)
       )}
