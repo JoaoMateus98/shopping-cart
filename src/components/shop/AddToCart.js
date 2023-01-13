@@ -1,9 +1,16 @@
+import { useContext } from "react";
+import { CartContext } from "../../helpers/CartProvider";
+
 const AddToCart = () => {
-  return <button onClick={handleClick}>Add To Cart</button>;
+  const { cartItems, setCartItems } = useContext(CartContext);
+
+  return <button onClick={() => handleClick(cartItems)}>Add To Cart</button>;
 };
 
-export function handleClick() {
-  const cartItem = createNewCartItem();
+// TODO: cartITems has current game ?
+// incrementCartItem : createNewCartItem
+export function handleClick(cartItems) {
+  let cartItem = createNewCartItem();
 }
 
 export function createNewCartItem(currentGame) {

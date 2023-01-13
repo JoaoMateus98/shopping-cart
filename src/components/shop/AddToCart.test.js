@@ -1,6 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import AddToCart, { handleClick, createNewCartItem } from "./AddToCart";
+import AddToCart, {
+  handleClick,
+  createNewCartItem,
+  incrementCartItem,
+} from "./AddToCart";
 import { testGameObject } from "../../helpers/testGameObject";
 
 let game = testGameObject;

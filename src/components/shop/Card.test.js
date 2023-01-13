@@ -2,6 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { testGameObject } from "../../helpers/testGameObject";
 import "@testing-library/jest-dom";
 import Card, { createGameObject } from "./Card";
+import CartProvider from "../../helpers/CartProvider";
 
 test("create object with all need properties", () => {
   expect(createGameObject(testGameObject)).toEqual({
@@ -14,23 +15,23 @@ test("create object with all need properties", () => {
 });
 
 describe("creates card element", () => {
-  test("renders correctly", () => {
-    const { container } = render(<Card game={testGameObject} />);
+  beforeEach(() => {
+    render(<CartProvider children={<Card game={testGameObject} />} />);
+  });
 
-    expect(container).toMatchSnapshot();
+  test("renders correctly", () => {
+    const cardContainer = screen.getByTestId(testGameObject.id);
+
+    expect(cardContainer).toMatchSnapshot();
   });
 
   test("display game name", () => {
-    render(<Card game={testGameObject} />);
-
     expect(
       screen.getByRole("heading", { name: testGameObject.name })
     ).toHaveTextContent(testGameObject.name);
   });
 
   test("card element contains all child elements", () => {
-    render(<Card game={testGameObject} />);
-
     const cardContainer = screen.getByTestId(testGameObject.id);
     const cardImage = screen.getByRole("img");
     const cardName = screen.getByRole("heading", {
