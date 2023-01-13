@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import AddToCart, { handleClick, createCartItem } from "./AddToCart";
+import AddToCart, { handleClick, createNewCartItem } from "./AddToCart";
 import { testGameObject } from "../../helpers/testGameObject";
 
 let game = testGameObject;
@@ -19,8 +19,8 @@ game = {
 };
 
 test("creates proper cart item", () => {
-  expect(createCartItem(game)).toEqual({
+  expect(createNewCartItem(game)).toEqual({
     ...game,
-    quantity: 2,
+    quantity: 1,
   });
 });

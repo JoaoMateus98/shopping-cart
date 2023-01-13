@@ -3,10 +3,10 @@ const AddToCart = () => {
 };
 
 export function handleClick() {
-  const cartItem = createCartItem();
+  const cartItem = createNewCartItem();
 }
 
-export function createCartItem(currentGame) {
+export function createNewCartItem(currentGame) {
   return {
     ...currentGame,
     quantity: 1,
