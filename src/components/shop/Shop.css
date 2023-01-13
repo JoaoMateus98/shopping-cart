@@ -10,7 +10,7 @@
   margin: 0 auto;
   width: 20rem;
   height: 26rem;
-  border: 2px solid white;
+  border: 4px outset var(--seal-brown);
   border-radius: 12px;
   padding: 8px;
   padding-bottom: 36px;
@@ -19,12 +19,15 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  background: rgb(71, 88, 160);
+  background-color: var(--seal-brown-dark);
 }
 
 .card > img {
   width: 19rem;
   height: 12rem;
   border-radius: 12px;
+  border: 4px inset var(--seal-brown);
 }
 
 .card > h2 {
@@ -32,7 +35,7 @@
 }
 
 .card > * {
-  color: white;
+  color: var(--laurel-green);
   font-weight: bold;
 }
 

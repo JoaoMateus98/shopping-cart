@@ -1,3 +1,10 @@
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--rich-black-fogra-29);
+  border-bottom: 2px solid var(--rich-black-fogra-29-lighter);
+}
+
 nav {
   margin: 0 auto;
   width: 90vw;
@@ -6,8 +13,14 @@ nav {
   display: flex;
 }
 
+img {
+  width: 32px;
+  height: 38px;
+}
+
 nav > ul {
   margin-left: auto;
+  padding-left: 2rem;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -18,7 +31,7 @@ nav > ul {
 
 a {
   font-size: 1.4rem;
-  color: white;
+  color: var(--laurel-green);
   text-decoration: none;
   list-style: none;
   font-weight: bolder;
