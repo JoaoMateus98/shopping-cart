@@ -1,15 +1,15 @@
 .games-container {
-  margin: 0 auto;
-  width: 75%;
-  padding: 16px;
+  width: 90vw;
+  margin: 4rem auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+  gap: 4rem;
 }
 
 .card {
-  width: 260px;
-  height: 360px;
+  margin: 0 auto;
+  width: 20rem;
+  height: 26rem;
   border: 2px solid white;
   border-radius: 12px;
   padding: 8px;
@@ -22,6 +22,8 @@
 }
 
 .card > img {
+  width: 19rem;
+  height: 12rem;
   border-radius: 12px;
 }
 
