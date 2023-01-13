@@ -6,7 +6,7 @@ function Home() {
     <div className="home-container">
       <section className="message-container">
         <h1>Welcome To The World Of Gaming</h1>
-        <p>THE WORLDS FIRST GAMING MARKETPLACE</p>
+        <p>THE WORLDS FIRST PC GAMING MARKETPLACE</p>
       </section>
       <section className="home-image-container">
         <img src={homeImage} alt="" />
