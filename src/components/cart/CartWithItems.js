@@ -1,5 +1,10 @@
 import { countTotalQuantity } from "../../helpers/handleCartItems";
-import { CartItemDescription, CartItemPrice, CartItemTotal } from "./CartItem";
+import {
+  CartItemDescription,
+  CartItemPrice,
+  CartItemQuantity,
+  CartItemTotal,
+} from "./CartItem";
 
 const CartWithItems = ({ cartItems }) => {
   return (
@@ -22,6 +27,7 @@ const CartWithItems = ({ cartItems }) => {
             </div>
             <div className="cart-quantity">
               <p className="sticky-section item-title bold-section">Quantity</p>
+              {CartItemQuantity(cartItems)}
             </div>
             <div className="cart-total">
               <p className="sticky-section item-title bold-section">Total</p>

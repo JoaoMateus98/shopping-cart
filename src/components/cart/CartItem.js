@@ -27,7 +27,21 @@ export function CartItemPrice(cartItems) {
     </ul>
   );
 }
-export function CartItemQuantity(cartItems) {}
+export function CartItemQuantity(cartItems) {
+  return (
+    <ul>
+      {cartItems.map((item) => {
+        return (
+          <div className="shared-height quantity-adjuster">
+            <button className="decrement-button">-</button>
+            <p>{item.quantity}</p>
+            <button className="increment-button">+</button>
+          </div>
+        );
+      })}
+    </ul>
+  );
+}
 export function CartItemTotal(cartItems) {
   return (
     <ul>
