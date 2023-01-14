@@ -75,13 +75,8 @@
 }
 
 @media only screen and (max-width: 400px) {
-  main {
-    display: flex;
-    justify-content: center;
-  }
-
   .games-container {
-    margin: 4rem 0;
+    margin: 4rem auto;
     width: fit-content;
   }
 
