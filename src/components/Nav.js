@@ -21,19 +21,21 @@ const Nav = () => {
       <img src={computerImage} alt="" />
       <ul>
         <Link to="/">
-          <li>Home</li>
+          <li className="nav-link">Home</li>
         </Link>
         <Link to="/shop">
-          <li>Marketplace</li>
+          <li className="nav-link">Marketplace</li>
         </Link>
         <Link to="/cart">
           <li className="cart-container">
             {totalInCart === 0 ? (
               <></>
             ) : (
-              <p className="cart-total">{totalInCart}</p>
+              <div className="total-container">
+                <p className="cart-total">{totalInCart}</p>
+              </div>
             )}
-            <img src={cartImage} alt="" />
+            <img className="nav-img" src={cartImage} alt="" />
           </li>
         </Link>
       </ul>

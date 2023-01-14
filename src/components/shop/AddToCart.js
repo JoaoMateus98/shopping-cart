@@ -6,7 +6,10 @@ const AddToCart = ({ currentGame }) => {
   const { cartItems, setCartItems } = useContext(CartContext);
 
   return (
-    <button onClick={() => handleClick(currentGame, cartItems, setCartItems)}>
+    <button
+      className="add-to-cart-button"
+      onClick={() => handleClick(currentGame, cartItems, setCartItems)}
+    >
       Add To Cart
     </button>
   );

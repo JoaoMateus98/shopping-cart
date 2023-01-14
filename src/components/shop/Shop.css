@@ -38,9 +38,31 @@
   font-weight: bold;
 }
 
-.add-to-cart {
+.add-to-cart-container {
   display: flex;
   gap: 16px;
+}
+
+.add-to-cart-container > p {
+  align-self: center;
+}
+
+.add-to-cart-button {
+  color: var(--laurel-green);
+  cursor: pointer;
+  padding: 6px 12px;
+  border: 2px solid var(--laurel-green);
+  border-radius: 4px;
+  font-weight: bolder;
+  background-color: var(--kombu-green);
+}
+
+.add-to-cart-button:hover {
+  background-color: rgb(37, 45, 30);
+}
+
+.add-to-cart-button:active {
+  background-color: rgb(68, 80, 56);
 }
 
 .loading {

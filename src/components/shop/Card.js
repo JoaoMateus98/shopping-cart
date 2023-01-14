@@ -15,7 +15,7 @@ const Card = ({ game }) => {
         />
         <h2>{name}</h2>
         <p>{"Metacritic Score: ".concat(rating)}</p>
-        <div className="add-to-cart">
+        <div className="add-to-cart-container">
           <p>${price}</p>
           <AddToCart currentGame={gameObject} />
         </div>
