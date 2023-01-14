@@ -1,3 +1,5 @@
+// some functions are repetive in order to limit dependecy and improve ease of tests
+
 export function isAlreadyInCart(cartItems, currentGame) {
   let alreadyInCart = false;
 
@@ -64,11 +66,33 @@ export function getItemTotalPrice(cartItem) {
   return cartItem.price * cartItem.quantity;
 }
 
-export function getGrandTotalPrice(cartItems) {
-  const total = cartItems.reduce(
+export function getSubTotalPrice(cartItems) {
+  const subTotal = cartItems.reduce(
     (accumulator, curItem) => accumulator + curItem.price * curItem.quantity,
     0
   );
 
-  return total;
+  return subTotal;
+}
+
+export function getSalesTax(cartItems, taxPercentage) {
+  const subTotal = cartItems.reduce(
+    (accumulator, curItem) => accumulator + curItem.price * curItem.quantity,
+    0
+  );
+
+  const salesTax = (subTotal * taxPercentage) / 100;
+
+  return salesTax;
+}
+
+export function getGrandTotalPrice(cartItems, taxPercentage) {
+  const subTotal = cartItems.reduce(
+    (accumulator, curItem) => accumulator + curItem.price * curItem.quantity,
+    0
+  );
+
+  const salesTax = (subTotal * taxPercentage) / 100;
+
+  return subTotal + salesTax;
 }
