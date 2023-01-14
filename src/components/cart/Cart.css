@@ -62,6 +62,51 @@
   justify-content: center;
 }
 
+.decrement-button {
+  margin-left: 12px;
+  border-radius: 4px 0 0 4px;
+}
+
+.increment-button {
+  margin-right: 12px;
+  border-radius: 0 4px 4px 0;
+}
+
+.decrement-button,
+.increment-button {
+  color: var(--laurel-green);
+  background-color: var(--kombu-green);
+  font-weight: bold;
+  height: 1.7rem;
+  width: 1.7rem;
+  border: 2px solid var(--laurel-green);
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.decrement-button:hover,
+.increment-button:hover {
+  cursor: pointer;
+  background-color: rgb(37, 45, 30);
+}
+
+.decrement-button:active,
+.increment-button:active {
+  background-color: rgb(68, 80, 56);
+}
+
+.quantity-displayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.7rem;
+  border-top: 2px solid var(--laurel-green);
+  border-bottom: 2px solid var(--laurel-green);
+  width: 2.7rem;
+}
+
 .cart-quantity > * {
   text-align: center;
 }

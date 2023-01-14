@@ -34,7 +34,7 @@ export function CartItemQuantity(cartItems) {
         return (
           <div className="shared-height quantity-adjuster">
             <button className="decrement-button">-</button>
-            <p>{item.quantity}</p>
+            <p className="quantity-displayer">{item.quantity}</p>
             <button className="increment-button">+</button>
           </div>
         );
