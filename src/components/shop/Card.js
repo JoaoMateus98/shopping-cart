@@ -2,6 +2,7 @@ import AddToCart from "./AddToCart";
 
 const Card = ({ game }) => {
   const { name, id, image, rating, price } = createGameObject(game);
+  const gameObject = createGameObject(game);
 
   return (
     <section data-testid={id} className="card-container">
@@ -14,9 +15,9 @@ const Card = ({ game }) => {
         />
         <h2>{name}</h2>
         <p>{"Metacritic Score: ".concat(rating)}</p>
-        <div className="add-to-cart">
+        <div className="add-to-cart-container">
           <p>${price}</p>
-          <AddToCart />
+          <AddToCart currentGame={gameObject} />
         </div>
       </div>
     </section>
