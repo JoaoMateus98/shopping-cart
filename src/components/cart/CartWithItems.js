@@ -5,6 +5,11 @@ import {
   CartItemQuantity,
   CartItemTotal,
 } from "./CartItem";
+import {
+  getSubTotalPrice,
+  getSalesTax,
+  getGrandTotalPrice,
+} from "../../helpers/handleCartItems";
 
 const CartWithItems = ({ cartItems, setCartItems }) => {
   return (
@@ -40,15 +45,15 @@ const CartWithItems = ({ cartItems, setCartItems }) => {
         <div className="price-calculation-container">
           <div>
             <p className="bold-section">Subtotal:</p>
-            <p>$900.57</p>
+            <p>${getSubTotalPrice(cartItems)}</p>
           </div>
           <div>
             <p className="bold-section">Sales Tax:</p>
-            <p>$100.00</p>
+            <p>${getSalesTax(cartItems, 6.5)}</p>
           </div>
           <div id="grand-total-container">
             <p className="bold-section">Grand Total:</p>
-            <p className="grand-total">$1,000.57</p>
+            <p className="grand-total">${getGrandTotalPrice(cartItems, 6.5)}</p>
           </div>
         </div>
         <button className="checkout-button">Check Out</button>
