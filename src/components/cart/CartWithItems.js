@@ -9,6 +9,7 @@ import {
   getSubTotalPrice,
   getSalesTax,
   getGrandTotalPrice,
+  removeAllItems,
 } from "../../helpers/handleCartItems";
 
 const CartWithItems = ({ cartItems, setCartItems }) => {
@@ -56,7 +57,15 @@ const CartWithItems = ({ cartItems, setCartItems }) => {
             <p className="grand-total">${getGrandTotalPrice(cartItems, 6.5)}</p>
           </div>
         </div>
-        <button className="checkout-button">Check Out</button>
+        <button
+          onClick={() => {
+            removeAllItems(setCartItems);
+            alert("Thanks for visiting The World Of Gaming");
+          }}
+          className="checkout-button"
+        >
+          Check Out
+        </button>
       </section>
     </>
   );

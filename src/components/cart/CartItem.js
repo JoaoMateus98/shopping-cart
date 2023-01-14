@@ -68,7 +68,7 @@ export function CartItemTotal(cartItems, setCartItems) {
               onClick={() => removeCartItem(cartItems, item, setCartItems)}
               className="remove-item-button"
             >
-              x
+              <p>x</p>
             </button>
           </div>
         );

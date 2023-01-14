@@ -54,6 +54,10 @@ export function removeCartItem(cartItems, currentGame, setCartItems) {
   setCartItems([...cartCopy]);
 }
 
+export function removeAllItems(setCartItems) {
+  setCartItems([]);
+}
+
 export function countTotalQuantity(cartItems) {
   const total = cartItems.reduce(
     (accumulator, item) => accumulator + item.quantity,
