@@ -33,3 +33,11 @@ export function decrementCart(cartItems, currentGame, setCartItems) {
     }
   });
 }
+
+export function countTotalQuantity(cartItems) {
+  const total = cartItems.reduce(
+    (accumulator, item) => accumulator + item.quantity,
+    0
+  );
+  return total;
+}
