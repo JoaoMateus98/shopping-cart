@@ -10,14 +10,18 @@ const CartWithItems = ({ cartItems }) => {
           )} items)`}</h1>
         </div>
         <div className="cart-items">
-          <div className="item-left">
-            <p className="sticky-section">Item</p>
+          <div className="cart-item-left">
+            <p className="sticky-section item-title bold-section">Item</p>
           </div>
-          <div className="item-right">
-            <div className="sticky-section">
-              <p>Price</p>
-              <p>Quantity</p>
-              <p>Total</p>
+          <div className="cart-item-right">
+            <div className="cart-price">
+              <p className="sticky-section item-title bold-section">Price</p>
+            </div>
+            <div className="cart-quantity">
+              <p className="sticky-section item-title bold-section">Quantity</p>
+            </div>
+            <div className="cart-total">
+              <p className="sticky-section item-title bold-section">Total</p>
             </div>
           </div>
         </div>
