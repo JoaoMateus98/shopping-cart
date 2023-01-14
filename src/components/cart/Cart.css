@@ -28,6 +28,25 @@
   flex-grow: 1;
 }
 
+.shared-height {
+  height: 128px;
+  border-bottom: 1px solid var(--laurel-green);
+}
+.shared-height > * {
+  margin: auto 0;
+}
+
+.cart-image {
+  border-radius: 12px;
+  margin-right: 12px;
+  width: 170px;
+  height: 96px;
+}
+
+.cart-description {
+  display: flex;
+}
+
 .cart-item-right {
   display: flex;
   flex-grow: 1;
@@ -51,10 +70,6 @@
 
 .item-title {
   border-bottom: 1px solid var(--laurel-green);
-}
-
-.sticky-section {
-  position: sticky;
 }
 
 /* checkout section --------------------------------------------------------- */
