@@ -31,7 +31,7 @@ const CartWithItems = ({ cartItems, setCartItems }) => {
             </div>
             <div className="cart-total">
               <p className="sticky-section item-title bold-section">Total</p>
-              {CartItemTotal(cartItems)}
+              {CartItemTotal(cartItems, setCartItems)}
             </div>
           </div>
         </div>

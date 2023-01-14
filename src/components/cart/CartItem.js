@@ -2,6 +2,7 @@ import {
   getItemTotalPrice,
   decrementCart,
   incrementCart,
+  removeCartItem,
 } from "../../helpers/handleCartItems";
 
 export function CartItemDescription(cartItems) {
@@ -56,13 +57,19 @@ export function CartItemQuantity(cartItems, setCartItems) {
     </ul>
   );
 }
-export function CartItemTotal(cartItems) {
+export function CartItemTotal(cartItems, setCartItems) {
   return (
     <ul>
       {cartItems.map((item) => {
         return (
           <div className="shared-height cart-total">
             <p>${getItemTotalPrice(item)}</p>
+            <button
+              onClick={() => removeCartItem(cartItems, item, setCartItems)}
+              className="remove-item-button"
+            >
+              x
+            </button>
           </div>
         );
       })}

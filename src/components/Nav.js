@@ -13,6 +13,8 @@ const Nav = () => {
   useEffect(() => {
     if (cartItems.length > 0) {
       setTotalInCart(countTotalQuantity(cartItems));
+    } else {
+      setTotalInCart(0);
     }
   }, [cartItems]);
 
