@@ -48,3 +48,16 @@ export function countTotalQuantity(cartItems) {
   );
   return total;
 }
+
+export function getItemTotal(cartItem) {
+  return cartItem.price * cartItem.quantity;
+}
+
+export function getGrandTotalPrice(cartItems) {
+  const total = cartItems.reduce(
+    (accumulator, curItem) => accumulator + curItem.price * curItem.quantity,
+    0
+  );
+
+  return total;
+}

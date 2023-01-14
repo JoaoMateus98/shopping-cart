@@ -2,6 +2,8 @@ import {
   incrementCart,
   decrementCart,
   countTotalQuantity,
+  getItemTotal,
+  getGrandTotalPrice,
 } from "./handleCartItems";
 
 let mockCartItems = [
@@ -104,4 +106,28 @@ test("decrement cart item quantity by one", () => {
 
 test("countTotalQuantity adds all quantity to 11", () => {
   expect(countTotalQuantity(mockCartItems)).toBe(11);
+});
+
+test("getItemTotal multiplies quantity by price", () => {
+  const mockCartItem = {
+    quantity: 5,
+    price: 15.0,
+  };
+
+  expect(getItemTotal(mockCartItem)).toBe(75.0);
+});
+
+test("getGrandTotalPrice adds all prices and return a total amount", () => {
+  const mockCartItems = [
+    {
+      quantity: 2,
+      price: 15.0,
+    },
+    {
+      quantity: 1,
+      price: 30.0,
+    },
+  ];
+
+  expect(getGrandTotalPrice(mockCartItems)).toBe(60.0);
 });

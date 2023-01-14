@@ -21,13 +21,15 @@ exports[`creates card element renders correctly 1`] = `
       Metacritic Score: 91
     </p>
     <div
-      class="add-to-cart"
+      class="add-to-cart-container"
     >
       <p>
         $
         44.70
       </p>
-      <button>
+      <button
+        class="add-to-cart-button"
+      >
         Add To Cart
       </button>
     </div>
