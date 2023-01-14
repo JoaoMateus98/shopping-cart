@@ -63,14 +63,17 @@ export function countTotalQuantity(cartItems) {
 }
 
 export function getItemTotalPrice(cartItem) {
-  return cartItem.price * cartItem.quantity;
+  const total = (cartItem.price * cartItem.quantity).toFixed(2);
+  return total;
 }
 
 export function getSubTotalPrice(cartItems) {
-  const subTotal = cartItems.reduce(
-    (accumulator, curItem) => accumulator + curItem.price * curItem.quantity,
-    0
-  );
+  const subTotal = cartItems
+    .reduce(
+      (accumulator, curItem) => accumulator + curItem.price * curItem.quantity,
+      0
+    )
+    .toFixed(2);
 
   return subTotal;
 }
@@ -83,7 +86,7 @@ export function getSalesTax(cartItems, taxPercentage) {
 
   const salesTax = (subTotal * taxPercentage) / 100;
 
-  return salesTax;
+  return salesTax.toFixed(2);
 }
 
 export function getGrandTotalPrice(cartItems, taxPercentage) {
@@ -94,5 +97,5 @@ export function getGrandTotalPrice(cartItems, taxPercentage) {
 
   const salesTax = (subTotal * taxPercentage) / 100;
 
-  return subTotal + salesTax;
+  return (subTotal + salesTax).toFixed(2);
 }

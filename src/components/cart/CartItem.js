@@ -1,3 +1,5 @@
+import { getItemTotalPrice } from "../../helpers/handleCartItems";
+
 export function CartItemDescription(cartItems) {
   return (
     <ul>
@@ -12,6 +14,30 @@ export function CartItemDescription(cartItems) {
     </ul>
   );
 }
-export function CartItemPrice(cartItems) {}
+export function CartItemPrice(cartItems) {
+  return (
+    <ul>
+      {cartItems.map((item) => {
+        return (
+          <div className="shared-height">
+            <p>${item.price}</p>
+          </div>
+        );
+      })}
+    </ul>
+  );
+}
 export function CartItemQuantity(cartItems) {}
-export function CartItemTotal(cartItems) {}
+export function CartItemTotal(cartItems) {
+  return (
+    <ul>
+      {cartItems.map((item) => {
+        return (
+          <div className="shared-height cart-total">
+            <p>${getItemTotalPrice(item)}</p>
+          </div>
+        );
+      })}
+    </ul>
+  );
+}

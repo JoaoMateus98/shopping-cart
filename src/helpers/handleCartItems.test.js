@@ -117,7 +117,7 @@ test("getItemTotal multiplies quantity by price", () => {
     price: 15.0,
   };
 
-  expect(getItemTotalPrice(mockCartItem)).toBe(75.0);
+  expect(getItemTotalPrice(mockCartItem)).toBe("75.00");
 });
 
 test("getSubTotalPrice adds all prices and return a total amount", () => {
@@ -132,7 +132,7 @@ test("getSubTotalPrice adds all prices and return a total amount", () => {
     },
   ];
 
-  expect(getSubTotalPrice(mockCartItems)).toBe(60.0);
+  expect(getSubTotalPrice(mockCartItems)).toBe("60.00");
 });
 
 test("removeCartItem removes item from array", () => {
@@ -172,7 +172,7 @@ test("calculate sales tax of 6.5%", () => {
     },
   ];
 
-  expect(getSalesTax(mockCartItems, 6.5)).toBe(3.9);
+  expect(getSalesTax(mockCartItems, 6.5)).toBe("3.90");
 });
 
 test("calculate grand total including subtotal and tax --> 63.9", () => {
@@ -187,5 +187,5 @@ test("calculate grand total including subtotal and tax --> 63.9", () => {
     },
   ];
 
-  expect(getGrandTotalPrice(mockCartItems, 6.5)).toBe(63.9);
+  expect(getGrandTotalPrice(mockCartItems, 6.5)).toBe("63.90");
 });
