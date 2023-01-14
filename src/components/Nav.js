@@ -27,7 +27,7 @@ const Nav = () => {
           <li>Marketplace</li>
         </Link>
         <Link to="/cart">
-          <li>
+          <li className="cart-container">
             {totalInCart === 0 ? (
               <></>
             ) : (

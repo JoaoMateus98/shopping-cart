@@ -29,6 +29,22 @@ nav > ul {
   gap: 10vw;
 }
 
+.cart-container {
+  display: flex;
+}
+
+.cart-total {
+  position: relative;
+  left: 0.7rem;
+  align-self: flex-end;
+  font-size: 1rem;
+  border-radius: 50%;
+  height: 1.05rem;
+  width: 1.05rem;
+  text-align: center;
+  background-color: rgb(233, 0, 0);
+}
+
 a {
   font-size: 1.4rem;
   color: var(--laurel-green);
