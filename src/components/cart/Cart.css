@@ -1,0 +1,9 @@
+.cart-section {
+  color: var(--laurel-green);
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-header {
+  display: flex;
+}
