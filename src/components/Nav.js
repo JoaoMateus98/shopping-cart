@@ -28,7 +28,11 @@ const Nav = () => {
         </Link>
         <Link to="/cart">
           <li>
-            <p>{totalInCart}</p>
+            {totalInCart === 0 ? (
+              <></>
+            ) : (
+              <p className="cart-total">{totalInCart}</p>
+            )}
             <img src={cartImage} alt="" />
           </li>
         </Link>
