@@ -2,7 +2,7 @@ import {
   incrementCart,
   decrementCart,
   countTotalQuantity,
-  getItemTotal,
+  getItemTotalPrice,
   getGrandTotalPrice,
 } from "./handleCartItems";
 
@@ -114,7 +114,7 @@ test("getItemTotal multiplies quantity by price", () => {
     price: 15.0,
   };
 
-  expect(getItemTotal(mockCartItem)).toBe(75.0);
+  expect(getItemTotalPrice(mockCartItem)).toBe(75.0);
 });
 
 test("getGrandTotalPrice adds all prices and return a total amount", () => {

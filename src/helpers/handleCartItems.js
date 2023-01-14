@@ -49,7 +49,7 @@ export function countTotalQuantity(cartItems) {
   return total;
 }
 
-export function getItemTotal(cartItem) {
+export function getItemTotalPrice(cartItem) {
   return cartItem.price * cartItem.quantity;
 }
 
