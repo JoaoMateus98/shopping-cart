@@ -24,19 +24,30 @@ export function incrementCart(cartItems, currentGame, setCartItems) {
 
 export function decrementCart(cartItems, currentGame, setCartItems) {
   const cartCopy = [...cartItems];
+  let endFunction = false;
 
   cartCopy.forEach((item) => {
     if (item.id === currentGame.id) {
       if (item.quantity === 1) {
-        const removedItemArray = cartCopy.filter(
-          (curItem) => item.id !== curItem.id
-        );
-        setCartItems([...removedItemArray]);
+        removeCartItem(cartItems, currentGame, setCartItems);
+        endFunction = true;
       } else {
         item.quantity--;
       }
     }
   });
+
+  if (endFunction) {
+    return;
+  } else {
+    setCartItems([...cartCopy]);
+  }
+}
+
+export function removeCartItem(cartItems, currentGame, setCartItems) {
+  let cartCopy = [...cartItems];
+
+  cartCopy = cartCopy.filter((item) => item.id !== currentGame.id);
 
   setCartItems([...cartCopy]);
 }

@@ -1,6 +1,7 @@
 import {
   incrementCart,
   decrementCart,
+  removeCartItem,
   countTotalQuantity,
   getItemTotalPrice,
   getGrandTotalPrice,
@@ -130,4 +131,29 @@ test("getGrandTotalPrice adds all prices and return a total amount", () => {
   ];
 
   expect(getGrandTotalPrice(mockCartItems)).toBe(60.0);
+});
+
+test("removeCartItem removes item from array", () => {
+  const mockSetCartItems = jest.fn((x) => (mockCartItems = [...x]));
+
+  const currentItem = {
+    name: "item3",
+    id: 49,
+    quantity: 1,
+  };
+
+  removeCartItem(mockCartItems, currentItem, mockSetCartItems);
+
+  expect(mockCartItems).toEqual([
+    {
+      name: "item1",
+      id: 10,
+      quantity: 2,
+    },
+    {
+      name: "item2",
+      id: 22,
+      quantity: 8,
+    },
+  ]);
 });
