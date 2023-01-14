@@ -6,7 +6,7 @@ import "./Cart.css";
 
 const Cart = () => {
   const { cartItems, setCartItems } = useContext(CartContext);
-  return <CartWithItems cartItems={cartItems} />;
+  return <CartWithItems cartItems={cartItems} setCartItems={setCartItems} />;
 };
 
 export default Cart;

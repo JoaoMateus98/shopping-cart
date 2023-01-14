@@ -1,4 +1,8 @@
-import { getItemTotalPrice } from "../../helpers/handleCartItems";
+import {
+  getItemTotalPrice,
+  decrementCart,
+  incrementCart,
+} from "../../helpers/handleCartItems";
 
 export function CartItemDescription(cartItems) {
   return (
@@ -27,15 +31,25 @@ export function CartItemPrice(cartItems) {
     </ul>
   );
 }
-export function CartItemQuantity(cartItems) {
+export function CartItemQuantity(cartItems, setCartItems) {
   return (
     <ul>
       {cartItems.map((item) => {
         return (
           <div className="shared-height quantity-adjuster">
-            <button className="decrement-button">-</button>
+            <button
+              onClick={() => decrementCart(cartItems, item, setCartItems)}
+              className="decrement-button"
+            >
+              -
+            </button>
             <p className="quantity-displayer">{item.quantity}</p>
-            <button className="increment-button">+</button>
+            <button
+              onClick={() => incrementCart(cartItems, item, setCartItems)}
+              className="increment-button"
+            >
+              +
+            </button>
           </div>
         );
       })}

@@ -127,6 +127,7 @@
 /* checkout section --------------------------------------------------------- */
 
 .checkout-section {
+  padding-top: 32px;
   margin: 0 auto;
   margin-bottom: 32px;
   display: flex;

@@ -14,7 +14,7 @@ const Nav = () => {
     if (cartItems.length > 0) {
       setTotalInCart(countTotalQuantity(cartItems));
     }
-  });
+  }, [cartItems]);
 
   return (
     <nav>

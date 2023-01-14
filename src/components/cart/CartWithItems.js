@@ -6,14 +6,14 @@ import {
   CartItemTotal,
 } from "./CartItem";
 
-const CartWithItems = ({ cartItems }) => {
+const CartWithItems = ({ cartItems, setCartItems }) => {
   return (
     <>
       <section className="cart-section">
         <div className="cart-header">
-          <h1 className="sticky-section">{`Your Cart (${countTotalQuantity(
+          <h1 className="sticky-section">{`Your Cart ( ${countTotalQuantity(
             cartItems
-          )} items)`}</h1>
+          )} items )`}</h1>
         </div>
         <div className="cart-items">
           <div className="cart-item-left">
@@ -27,7 +27,7 @@ const CartWithItems = ({ cartItems }) => {
             </div>
             <div className="cart-quantity">
               <p className="sticky-section item-title bold-section">Quantity</p>
-              {CartItemQuantity(cartItems)}
+              {CartItemQuantity(cartItems, setCartItems)}
             </div>
             <div className="cart-total">
               <p className="sticky-section item-title bold-section">Total</p>
