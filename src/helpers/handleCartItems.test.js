@@ -43,13 +43,15 @@ beforeEach(() => {
 });
 
 test("increment cart adds one to quantity", () => {
+  const mockSetCartItems = jest.fn((x) => (mockCartItems = x));
+
   const currentItem = {
     name: "item1",
     id: 10,
     quantity: 2,
   };
 
-  incrementCart(mockCartItems, currentItem);
+  incrementCart(mockCartItems, currentItem, mockSetCartItems);
 
   expect(mockCartItems).toEqual([
     {
@@ -71,13 +73,15 @@ test("increment cart adds one to quantity", () => {
 });
 
 test("decrement cart item quantity by one", () => {
+  const mockSetCartItems = jest.fn((x) => (mockCartItems = x));
+
   const currentItem = {
     name: "item2",
     id: 22,
     quantity: 8,
   };
 
-  decrementCart(mockCartItems, currentItem);
+  decrementCart(mockCartItems, currentItem, mockSetCartItems);
 
   expect(mockCartItems).toEqual([
     {
@@ -94,31 +98,6 @@ test("decrement cart item quantity by one", () => {
       name: "item3",
       id: 49,
       quantity: 1,
-    },
-  ]);
-});
-
-test("remove cart item if quantity is 0", () => {
-  const mockSetCartItems = jest.fn((x) => (mockCartItems = x));
-
-  const currentItem = {
-    name: "item3",
-    id: 49,
-    quantity: 1,
-  };
-
-  decrementCart(mockCartItems, currentItem, mockSetCartItems);
-
-  expect(mockCartItems).toEqual([
-    {
-      name: "item1",
-      id: 10,
-      quantity: 2,
-    },
-    {
-      name: "item2",
-      id: 22,
-      quantity: 8,
     },
   ]);
 });

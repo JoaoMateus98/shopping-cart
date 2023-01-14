@@ -23,7 +23,7 @@ function handleClick(currentGame, cartItems, setCartItems) {
     const newCartItem = createNewCartItem(currentGame);
     setCartItems([...cartItems, newCartItem]);
   } else {
-    incrementCart(cartItems, currentGame);
+    incrementCart(cartItems, currentGame, setCartItems);
   }
 
   console.log(cartItems);

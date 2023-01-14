@@ -1,7 +1,7 @@
 export function isAlreadyInCart(cartItems, currentGame) {
   let alreadyInCart = false;
 
-  cartItems.map((item) => {
+  cartItems.forEach((item) => {
     if (item.id === currentGame.id) {
       alreadyInCart = true;
     }
@@ -10,28 +10,35 @@ export function isAlreadyInCart(cartItems, currentGame) {
   return alreadyInCart;
 }
 
-export function incrementCart(cartItems, currentGame) {
-  cartItems.map((item) => {
+export function incrementCart(cartItems, currentGame, setCartItems) {
+  let cartCopy = [...cartItems];
+  cartCopy.forEach((item) => {
     if (item.id === currentGame.id) {
       item.quantity++;
       return;
     }
   });
+
+  setCartItems([...cartCopy]);
 }
 
 export function decrementCart(cartItems, currentGame, setCartItems) {
-  cartItems.map((item) => {
+  const cartCopy = [...cartItems];
+
+  cartCopy.forEach((item) => {
     if (item.id === currentGame.id) {
       if (item.quantity === 1) {
-        // remove item
-        const newArray = cartItems.filter((item) => item.id !== currentGame.id);
-        setCartItems(newArray);
+        const removedItemArray = cartCopy.filter(
+          (curItem) => item.id !== curItem.id
+        );
+        setCartItems([...removedItemArray]);
       } else {
         item.quantity--;
-        return;
       }
     }
   });
+
+  setCartItems([...cartCopy]);
 }
 
 export function countTotalQuantity(cartItems) {
