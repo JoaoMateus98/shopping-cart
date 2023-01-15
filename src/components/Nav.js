@@ -22,13 +22,13 @@ const Nav = () => {
     <nav>
       <img src={computerImage} alt="" />
       <ul>
-        <Link to="/">
+        <Link to="/shopping-cart/">
           <li className="nav-link">Home</li>
         </Link>
-        <Link to="/shop">
+        <Link to="/shopping-cart/shop">
           <li className="nav-link">Marketplace</li>
         </Link>
-        <Link to="/cart">
+        <Link to="/shopping-cart/cart">
           <li className="cart-container">
             {totalInCart === 0 ? (
               <></>
