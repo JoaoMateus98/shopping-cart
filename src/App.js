@@ -19,12 +19,12 @@ const App = () => {
             </header>
             <main>
               <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/shopping-cart" element={<Home />} />
                 <Route
-                  path="/shop"
+                  path="/shopping-cart/shop"
                   element={<Shop gameList={games} setGames={setGames} />}
                 />
-                <Route path="/cart" element={<Cart />} />
+                <Route path="/shopping-cart/cart" element={<Cart />} />
               </Routes>
             </main>
           </>
