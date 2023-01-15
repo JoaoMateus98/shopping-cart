@@ -214,3 +214,25 @@
     width: 1500px;
   }
 }
+
+@media only screen and (max-width: 650px) {
+  .cart-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .cart-image {
+    display: none;
+  }
+
+  .shared-height {
+    min-height: 124px;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .cart-price {
+    display: none;
+  }
+}
